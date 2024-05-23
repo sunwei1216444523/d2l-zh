@@ -251,6 +251,8 @@ def squared_loss(y_hat, y):  #@save
 一步更新的大小由学习速率`lr`决定。
 因为我们计算的损失是一个批量样本的总和，所以我们用批量大小（`batch_size`）
 来规范化步长，这样步长大小就不会取决于我们对批量大小的选择。
+@sunwei: 这里如果采用的是`mean()`而不是`sum()`的话，就不再需要除以`batch_size`了
+如果使用`sum()`那么得到的`w.grad`也是`sum()`之后的。
 
 ```{.python .input}
 def sgd(params, lr, batch_size):  #@save
