@@ -156,6 +156,7 @@ plot_kernel_reg(y_hat)
 
 ```{.python .input}
 #@tab pytorch
+# 👨sunwei:这里的repeat_interleave得到结果是每个元素重复一遍，而不是每组元素重复的顺序
 y_hat = torch.repeat_interleave(y_train.mean(), n_test)
 plot_kernel_reg(y_hat)
 ```
